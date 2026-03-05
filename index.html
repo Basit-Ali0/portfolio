@@ -57,10 +57,10 @@
             <span class="nav-logo">Hola!</span>
             <div class="nav-right">
                 <ul class="nav-links">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Feeds</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div style="display:flex;align-items:center;gap:7px;">
                     <span id="ticon" style="font-size:15px;">☀️</span>
@@ -70,7 +70,7 @@
         </nav>
 
         <!-- HERO -->
-        <section class="section s-hero" data-reveal>
+        <section id="home" class="section s-hero" data-reveal>
             <div class="co-tag">
                 Co-Founder of
                 <span style="display:inline-flex;align-items:center;gap:5px;color:var(--gray2);">
@@ -145,7 +145,7 @@
         </section>
 
         <!-- ABOUT -->
-        <section class="section s-about" data-reveal>
+        <section id="about" class="section s-about" data-reveal>
             <div class="sec-hdr">
                 <div class="sec-icon">
                     <svg viewBox="0 0 24 24" fill="none">
@@ -334,55 +334,10 @@
             </div>
         </section>
 
-        <!-- GITHUB STATS -->
-        <section class="section alt s-github" data-reveal>
-            <div class="sec-hdr">
-                <div class="sec-icon">
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <path
-                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"
-                            stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </div>
-                <h2 class="sec-title">GitHub Stats</h2>
-            </div>
-            <div class="gh-grid">
-                <div class="gh-card">
-                    <div class="gh-icon" style="background:#EEF4FF;">📦</div>
-                    <div>
-                        <div class="gh-num">—</div>
-                        <div class="gh-lbl">Repositories</div>
-                    </div>
-                </div>
-                <div class="gh-card">
-                    <div class="gh-icon" style="background:#F0FDF4;">👥</div>
-                    <div>
-                        <div class="gh-num">—</div>
-                        <div class="gh-lbl">Followers</div>
-                    </div>
-                </div>
-                <div class="gh-card">
-                    <div class="gh-icon" style="background:#FFF7ED;">⭐</div>
-                    <div>
-                        <div class="gh-num">—</div>
-                        <div class="gh-lbl">Stars Earned</div>
-                    </div>
-                </div>
-                <div class="gh-card">
-                    <div class="gh-icon" style="background:#FDF4FF;">🍴</div>
-                    <div>
-                        <div class="gh-num">—</div>
-                        <div class="gh-lbl">Forks</div>
-                    </div>
-                </div>
-            </div>
-            <div class="cg-label">Contribution Activity — 2025</div>
-            <div class="cg-wrap" id="cgraph"></div>
-            <div id="lbars" style="margin-top:22px;"></div>
-        </section>
+
 
         <!-- WORKS -->
-        <section class="section s-works" data-reveal>
+        <section id="work" class="section s-works" data-reveal>
             <div class="sec-hdr">
                 <div class="sec-icon">
                     <svg viewBox="0 0 24 24" fill="none">
@@ -435,8 +390,55 @@
             </div>
         </section>
 
+        <!-- GITHUB STATS -->
+        <section class="section alt s-github" data-reveal>
+            <div class="sec-hdr">
+                <div class="sec-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"
+                            stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <h2 class="sec-title">GitHub Stats</h2>
+            </div>
+            <div class="gh-grid">
+                <div class="gh-card">
+                    <div class="gh-icon" style="background:#EEF4FF;">📦</div>
+                    <div>
+                        <div class="gh-num">—</div>
+                        <div class="gh-lbl">Repositories</div>
+                    </div>
+                </div>
+                <div class="gh-card">
+                    <div class="gh-icon" style="background:#F0FDF4;">👥</div>
+                    <div>
+                        <div class="gh-num">—</div>
+                        <div class="gh-lbl">Followers</div>
+                    </div>
+                </div>
+                <div class="gh-card">
+                    <div class="gh-icon" style="background:#FFF7ED;">⭐</div>
+                    <div>
+                        <div class="gh-num">—</div>
+                        <div class="gh-lbl">Stars Earned</div>
+                    </div>
+                </div>
+                <div class="gh-card">
+                    <div class="gh-icon" style="background:#FDF4FF;">🍴</div>
+                    <div>
+                        <div class="gh-num">—</div>
+                        <div class="gh-lbl">Forks</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cg-label">Contribution Activity — 2025</div>
+            <div class="cg-wrap" id="cgraph"></div>
+            <div id="lbars" style="margin-top:22px;"></div>
+        </section>
+
         <!-- CONTACT -->
-        <section class="section s-contact" data-reveal>
+        <section id="contact" class="section s-contact" data-reveal>
             <div class="sec-hdr">
                 <div class="sec-icon">
                     <svg viewBox="0 0 24 24" fill="none">
