@@ -11,14 +11,14 @@
     resize();
     window.addEventListener('resize', resize);
 
-    // Aurora curtain definitions — drastically slower spd values, higher opacities for better visual quality.
+    // Aurora curtain definitions — drastically slower spd values
     const curtains = [
-        { h: 160, y: 0.30, amp: 0.12, spd: 0.00008, freq: 1.5, op: 0.65 }, // teal/green
-        { h: 200, y: 0.22, amp: 0.09, spd: 0.00006, freq: 2.0, op: 0.55 }, // blue
-        { h: 280, y: 0.18, amp: 0.15, spd: 0.00010, freq: 1.2, op: 0.50 }, // purple
-        { h: 140, y: 0.35, amp: 0.08, spd: 0.00005, freq: 2.4, op: 0.45 }, // green
-        { h: 190, y: 0.12, amp: 0.10, spd: 0.00007, freq: 1.0, op: 0.40 }, // cyan
-        { h: 310, y: 0.28, amp: 0.07, spd: 0.00012, freq: 2.8, op: 0.35 }, // pink
+        { h: 160, y: 0.30, amp: 0.12, spd: 0.00004, freq: 1.5, op: 0.65 }, // teal/green
+        { h: 200, y: 0.22, amp: 0.09, spd: 0.00003, freq: 2.0, op: 0.55 }, // blue
+        { h: 280, y: 0.18, amp: 0.15, spd: 0.00006, freq: 1.2, op: 0.50 }, // purple
+        { h: 140, y: 0.35, amp: 0.08, spd: 0.00002, freq: 2.4, op: 0.45 }, // green
+        { h: 190, y: 0.12, amp: 0.10, spd: 0.00003, freq: 1.0, op: 0.40 }, // cyan
+        { h: 310, y: 0.28, amp: 0.07, spd: 0.00005, freq: 2.8, op: 0.35 }, // pink
     ];
 
     function drawStars() {
