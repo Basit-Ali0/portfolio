@@ -85,3 +85,47 @@ function launchConfetti() {
         runConfetti();
     }
 }
+
+// ══════════════════════════════════════
+// EASTER EGG: "hireme"
+// ══════════════════════════════════════
+let secretBuffer = '';
+document.addEventListener('keydown', (e) => {
+    // Ignore keys if modifying (ctrl/alt/meta)
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+    // Only care about letters
+    if (/^[a-zA-Z]$/.test(e.key)) {
+        secretBuffer += e.key.toLowerCase();
+        // Keep buffer at max 6 chars
+        if (secretBuffer.length > 6) {
+            secretBuffer = secretBuffer.slice(-6);
+        }
+
+        if (secretBuffer === 'hireme') {
+            secretBuffer = ''; // reset immediately
+            launchConfetti();
+
+            // Show a custom stylish message instead of an ugly confirm
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+                background: var(--card-bg); border: 1px solid var(--card-border);
+                color: var(--dark); padding: 15px 25px; border-radius: 12px;
+                font-family: var(--font); font-weight: 600; font-size: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 99999;
+                display: flex; align-items: center; gap: 10px;
+                animation: fadeUp 0.4s ease forwards;
+            `;
+            toast.innerHTML = '<span>🎉</span> <span>Great idea! Drop me an email: <strong>hello@satya.dev</strong></span>';
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translate(-50%, -10px)';
+                toast.style.transition = 'all 0.4s ease';
+                setTimeout(() => toast.remove(), 400);
+            }, 5000);
+        }
+    }
+});

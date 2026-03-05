@@ -45,6 +45,11 @@
 </head>
 
 <body>
+    <!-- ── SPLASH SCREEN ── -->
+    <div id="splash-screen">
+        <div class="splash-logo">S</div>
+    </div>
+
     <canvas id="bg-canvas"></canvas>
     <div id="cursor-dot"></div>
     <div id="cursor-ring"></div>
@@ -54,7 +59,7 @@
 
         <!-- NAV -->
         <nav id="mainNav">
-            <span class="nav-logo">Hola!</span>
+            <span class="nav-logo" id="holaWord">Hola!</span>
             <div class="nav-right">
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
@@ -493,6 +498,20 @@
     <script src="js/confetti.js"></script>
     <script src="js/github.js"></script>
     <script src="js/contact.js"></script>
+
+    <!-- ── SPLASH SCREEN LOGIC ── -->
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                if (splash) {
+                    splash.style.opacity = '0';
+                    splash.style.pointerEvents = 'none';
+                    setTimeout(() => splash.remove(), 600); // Remove from DOM after fade out
+                }
+            }, 800);
+        });
+    </script>
 </body>
 
 </html>
