@@ -95,8 +95,8 @@
             bgGrad.addColorStop(0, '#04060c');
             bgGrad.addColorStop(1, '#070b15');
         } else {
-            bgGrad.addColorStop(0, '#f8fafc');
-            bgGrad.addColorStop(1, '#f1f5f9');
+            bgGrad.addColorStop(0, '#ffffff');
+            bgGrad.addColorStop(1, '#ffffff');
         }
         ctx.fillStyle = bgGrad;
         ctx.fillRect(0, 0, W, H);

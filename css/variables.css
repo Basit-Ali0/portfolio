@@ -2,38 +2,50 @@
    DESIGN TOKENS & CUSTOM PROPERTIES
    ══════════════════════════════════════ */
 
+/* ── THEME COLORS (Light Mode Default) ── */
 :root {
-  --bg: transparent;
-  --card: rgba(10,14,28,0.60);
-  --card-alt: rgba(8,11,22,0.55);
-  --dark: #e8eeff;
-  --gray: #7a8aaa;
-  --gray2: #9aaac8;
-  --border: rgba(80,120,255,0.15);
-  --pill-bg: rgba(255,255,255,0.07);
-  --pill-border: rgba(120,160,255,0.18);
-  --divider: rgba(255,255,255,0.07);
-  --input-bg: rgba(255,255,255,0.05);
-  --shadow-sm: 0 4px 32px rgba(0,10,60,0.35);
-  --shadow-md: 0 8px 32px rgba(0,10,60,0.5), 0 2px 4px rgba(0,0,0,0.3);
-  --glass-blur: blur(24px) saturate(160%);
-  --font: 'DM Sans', sans-serif;
-  --transition: 0.28s ease;
+  --bg: #ffffff;
+  --card: transparent;
+  --card-alt: transparent;
+  --border: rgba(148, 163, 184, 0.4);
+  --divider: rgba(148, 163, 184, 0.2);
+
+  /* Typography — Pure black/dark for light mode contrast */
+  --dark: #000000;
+  --gray: #2c3e50;
+  --gray2: #1a202c;
+
+  /* Input & Badge */
+  --input-bg: rgba(255, 255, 255, 0.5);
+  --pill-bg: #fff;
+  --pill-border: #e2e8f0;
+
+  --font: 'DM Sans', system-ui, sans-serif;
+  --glass-blur: blur(28px);
+  --transition: 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Shadows - softer for light mode */
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.05);
 }
 
+/* ── DARK THEME OVERRIDES ── */
 [data-theme="dark"] {
-  --bg: transparent;
-  --card: rgba(6,9,18,0.65);
-  --card-alt: rgba(4,7,14,0.60);
+  --bg: #04060c;
+  --card: transparent;
+  --card-alt: transparent;
+  --border: rgba(100, 150, 255, 0.12);
+  --divider: rgba(100, 150, 255, 0.08);
+
+  /* Typography — Lighter for dark mode contrast */
   --dark: #e8eeff;
-  --gray: #6a7a9a;
-  --gray2: #8a9ab8;
-  --border: rgba(60,100,255,0.12);
-  --pill-bg: rgba(255,255,255,0.05);
-  --pill-border: rgba(100,140,255,0.15);
-  --divider: rgba(255,255,255,0.05);
-  --input-bg: rgba(255,255,255,0.04);
-  --shadow-sm: 0 4px 32px rgba(0,5,40,0.5);
-  --shadow-md: 0 8px 32px rgba(0,5,40,0.7), 0 2px 4px rgba(0,0,0,0.4);
-  --glass-blur: blur(24px) saturate(150%);
+  --gray: #7a8aaa;
+  --gray2: #a5b4fc;
+
+  --input-bg: rgba(10, 15, 32, 0.5);
+  --pill-bg: rgba(15, 25, 45, 0.6);
+  --pill-border: rgba(80, 140, 255, 0.2);
+
+  --shadow-sm: 0 4px 20px rgba(0, 10, 40, 0.3);
+  --shadow-md: 0 8px 30px rgba(0, 10, 40, 0.4);
 }

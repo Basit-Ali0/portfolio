@@ -123,54 +123,70 @@ nav.scrolled {
     line-height: 1;
 }
 
-/* ── SHARED SECTION — glassy ── */
+/* ── SHARED SECTION — transparent for continuous flow ── */
 .section {
-    background: var(--card);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 40px 36px 44px;
-    margin-bottom: 12px;
-    box-shadow: var(--shadow-sm);
-    transition: box-shadow var(--transition);
+    background: transparent;
+    border: none;
+    padding: 30px 16px 40px;
+    margin-bottom: 0;
+    box-shadow: none;
+    position: relative;
+}
+
+.section::after {
+    /* Optional subtle divider between sections */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: radial-gradient(circle, rgba(100, 150, 255, 0.1) 0%, transparent 100%);
+}
+
+.section:last-child::after {
+    display: none;
 }
 
 .section.alt {
-    background: var(--card-alt);
+    background: transparent;
 }
 
 .sec-hdr {
     display: flex;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 32px;
+    gap: 16px;
+    margin-bottom: 28px;
 }
 
 .sec-icon {
-    width: 48px;
-    height: 48px;
-    background: #1A1A1A;
-    border-radius: 13px;
+    width: 56px;
+    height: 56px;
+    background: rgba(10, 15, 32, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(80, 140, 255, 0.15);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     flex-shrink: 0;
 }
 
 [data-theme="dark"] .sec-icon {
-    background: #2e2e2e;
+    background: rgba(20, 25, 40, 0.7);
 }
 
 .sec-icon svg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.8;
 }
 
 .sec-title {
-    font-size: 28px;
+    font-size: 34px;
     font-weight: 800;
     color: var(--dark);
-    letter-spacing: -0.8px;
+    letter-spacing: -1px;
 }
