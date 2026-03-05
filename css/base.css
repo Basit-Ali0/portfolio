@@ -1,0 +1,176 @@
+/* ══════════════════════════════════════
+   BASE — Reset, Body, Container, Nav
+   ══════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font);
+    background: #07090f;
+    min-height: 100vh;
+    padding: 32px 16px 80px;
+    overflow-x: hidden;
+}
+
+[data-theme="dark"] body {
+    background: #04060c;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── NAV — always glassy aurora ── */
+nav {
+    background: rgba(8, 12, 28, 0.55);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid rgba(80, 140, 255, 0.18);
+    border-radius: 20px;
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 32px rgba(0, 10, 60, 0.3), 0 1px 0 rgba(100, 180, 255, 0.08) inset;
+    transition: box-shadow 0.3s, border-radius 0.3s;
+    position: sticky;
+    top: 12px;
+    z-index: 100;
+}
+
+nav.scrolled {
+    border-radius: 14px;
+    box-shadow: 0 8px 40px rgba(0, 10, 80, 0.45), 0 1px 0 rgba(100, 200, 255, 0.1) inset;
+}
+
+.nav-logo {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -0.3px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray2);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--dark);
+}
+
+/* Theme toggle button */
+.theme-btn {
+    width: 44px;
+    height: 24px;
+    background: #ddd;
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: background 0.3s;
+}
+
+[data-theme="dark"] .theme-btn {
+    background: #444;
+}
+
+.theme-btn::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .theme-btn::after {
+    transform: translateX(20px);
+}
+
+.theme-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* ── SHARED SECTION — glassy ── */
+.section {
+    background: var(--card);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px 36px 44px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition);
+}
+
+.section.alt {
+    background: var(--card-alt);
+}
+
+.sec-hdr {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 32px;
+}
+
+.sec-icon {
+    width: 48px;
+    height: 48px;
+    background: #1A1A1A;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    flex-shrink: 0;
+}
+
+[data-theme="dark"] .sec-icon {
+    background: #2e2e2e;
+}
+
+.sec-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.sec-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -0.8px;
+}

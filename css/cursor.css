@@ -1,0 +1,58 @@
+/* ══════════════════════════════════════
+   CUSTOM CURSOR
+   ══════════════════════════════════════ */
+
+* {
+    cursor: none !important;
+}
+
+#cursor-dot {
+    position: fixed;
+    pointer-events: none;
+    z-index: 99999;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--dark);
+    transform: translate(-50%, -50%);
+    transition: transform 0.08s, background 0.2s, width 0.2s, height 0.2s, opacity 0.2s;
+}
+
+#cursor-ring {
+    position: fixed;
+    pointer-events: none;
+    z-index: 99998;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(0, 0, 0, 0.25);
+    transform: translate(-50%, -50%);
+    transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), width 0.2s, height 0.2s, border-color 0.2s, opacity 0.2s;
+}
+
+[data-theme="dark"] #cursor-ring {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="dark"] #cursor-dot {
+    background: #f0f0f0;
+}
+
+body:has(a:hover) #cursor-ring,
+body:has(button:hover) #cursor-ring {
+    width: 52px;
+    height: 52px;
+    border-color: #6366f1;
+}
+
+body:has(a:hover) #cursor-dot,
+body:has(button:hover) #cursor-dot {
+    background: #6366f1;
+}
+
+body:has(.pc:hover) #cursor-ring {
+    width: 60px;
+    height: 60px;
+    border-color: #8b5cf6;
+    opacity: 0.7;
+}

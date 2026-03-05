@@ -1,0 +1,38 @@
+/* ══════════════════════════════════════
+   RESPONSIVE — Mobile Breakpoint
+   ══════════════════════════════════════ */
+
+@media (max-width:680px) {
+    .hhead {
+        font-size: 30px;
+    }
+
+    .pg,
+    .about-grid,
+    .ct-grid,
+    .gh-grid,
+    .ach-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        padding: 14px 18px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .section {
+        padding: 26px 18px 30px;
+    }
+
+    * {
+        cursor: auto !important;
+    }
+
+    #cursor-dot,
+    #cursor-ring {
+        display: none;
+    }
+}
