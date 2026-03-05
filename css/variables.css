@@ -6,8 +6,10 @@
 :root {
   --bg: #ffffff;
   --card: transparent;
+  --card-bg: rgba(255, 255, 255, 0.75);
   --card-alt: transparent;
   --border: rgba(148, 163, 184, 0.4);
+  --card-border: rgba(148, 163, 184, 0.2);
   --divider: rgba(148, 163, 184, 0.2);
 
   /* Typography — Pure black/dark for light mode contrast */
@@ -33,8 +35,10 @@
 [data-theme="dark"] {
   --bg: #04060c;
   --card: transparent;
+  --card-bg: rgba(10, 15, 32, 0.65);
   --card-alt: transparent;
   --border: rgba(100, 150, 255, 0.12);
+  --card-border: rgba(80, 140, 255, 0.15);
   --divider: rgba(100, 150, 255, 0.08);
 
   /* Typography — Lighter for dark mode contrast */

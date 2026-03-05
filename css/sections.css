@@ -142,10 +142,10 @@
 }
 
 .stat-card {
-    background: rgba(10, 15, 32, 0.65);
+    background: var(--card-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(80, 140, 255, 0.15);
+    border: 1px solid var(--card-border);
     border-radius: 14px;
     padding: 18px 14px;
     text-align: center;
@@ -178,10 +178,10 @@
 .status-bar {
     margin-top: 18px;
     padding: 13px 15px;
-    background: rgba(10, 15, 32, 0.5);
+    background: var(--card-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(80, 140, 255, 0.12);
+    border: 1px solid var(--card-border);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -316,10 +316,10 @@
 }
 
 .ach-card {
-    background: rgba(10, 15, 32, 0.65);
+    background: var(--card-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(80, 140, 255, 0.15);
+    border: 1px solid var(--card-border);
     border-radius: 16px;
     padding: 20px 16px 18px;
     display: flex;
@@ -396,10 +396,10 @@
 }
 
 .gh-card {
-    background: rgba(10, 15, 32, 0.65);
+    background: var(--card-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(80, 140, 255, 0.15);
+    border: 1px solid var(--card-border);
     border-radius: 14px;
     padding: 20px 18px;
     display: flex;
@@ -546,14 +546,14 @@
 }
 
 .pc {
-    background: rgba(10, 15, 32, 0.7);
+    background: var(--card-bg);
     backdrop-filter: blur(24px) saturate(160%);
     -webkit-backdrop-filter: blur(24px) saturate(160%);
     border-radius: 16px;
     padding: 20px 20px 24px;
     box-shadow: 0 4px 30px rgba(0, 10, 60, 0.4);
     cursor: pointer;
-    border: 1px solid rgba(80, 140, 255, 0.18);
+    border: 1px solid var(--card-border);
     transition: transform 0.25s, box-shadow 0.25s;
     transform-style: preserve-3d;
     will-change: transform;

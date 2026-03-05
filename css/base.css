@@ -31,17 +31,17 @@ body {
 
 /* ── NAV — always glassy aurora ── */
 nav {
-    background: rgba(8, 12, 28, 0.55);
+    background: var(--card-bg);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid rgba(80, 140, 255, 0.18);
+    border: 1px solid var(--card-border);
     border-radius: 20px;
     padding: 16px 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 12px;
-    box-shadow: 0 4px 32px rgba(0, 10, 60, 0.3), 0 1px 0 rgba(100, 180, 255, 0.08) inset;
+    box-shadow: 0 4px 32px rgba(0, 10, 60, 0.1), 0 1px 0 rgba(100, 180, 255, 0.05) inset;
     transition: box-shadow 0.3s, border-radius 0.3s;
     position: sticky;
     top: 12px;
@@ -162,20 +162,16 @@ nav.scrolled {
 .sec-icon {
     width: 56px;
     height: 56px;
-    background: rgba(10, 15, 32, 0.7);
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(80, 140, 255, 0.15);
+    border: 1px solid var(--card-border);
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     flex-shrink: 0;
-}
-
-[data-theme="dark"] .sec-icon {
-    background: rgba(20, 25, 40, 0.7);
 }
 
 .sec-icon svg {
