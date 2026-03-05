@@ -317,3 +317,14 @@
     transform: translateY(-2px);
     opacity: 0.9;
 }
+
+#modal-link-github {
+    background: transparent;
+    color: var(--dark);
+    border: 1px solid var(--card-border);
+}
+
+#modal-link-github:hover {
+    background: var(--card-border);
+    color: var(--dark);
+}

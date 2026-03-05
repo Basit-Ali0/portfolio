@@ -9,7 +9,8 @@ const projectsData = {
         desc: "A conceptual redesign and development of Tesla's landing page, focusing on high-performance motion design, interactive 3D vehicle models, and a darker, more premium aesthetic. Built to push the boundaries of Framer's animation capabilities while maintaining perfect responsiveness across all devices.",
         tags: ["Framer", "UI/UX", "Motion Design", "3D Web"],
         image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        link: "#"
+        github: "#",
+        live: "#"
     },
     grok: {
         title: "Grok Dashboard",
@@ -17,7 +18,8 @@ const projectsData = {
         desc: "An exploration into conceptualizing a dedicated dashboard for xAI's Grok. The focus was on creating a brutally utilitarian yet slick interface that handles high-density data, real-time streaming text, and complex user prompt histories without feeling cluttered.",
         tags: ["Product Design", "Figma", "Design Systems"],
         image: "https://images.unsplash.com/photo-1620825937374-87fc1a620f8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        link: "#"
+        github: "#",
+        live: "#"
     },
     notion: {
         title: "Notion Redesign",
@@ -25,7 +27,8 @@ const projectsData = {
         desc: "A comprehensive case study on improving Notion's mobile navigation and workspace hierarchy. This project involved extensive user research, prototyping new fluid swipe gestures, and tightening up the dark mode color palette for better contrast and legibility.",
         tags: ["UX Research", "Prototyping", "Mobile First"],
         image: "https://images.unsplash.com/photo-1555547602-0c9f1acb32f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        link: "#"
+        github: "#",
+        live: "#"
     },
     sprrrint: {
         title: "Sprrrint Branding",
@@ -33,7 +36,8 @@ const projectsData = {
         desc: "The complete brand identity system for Sprrrint, a fast-paced development agency. This included logo design, establishing a vibrant core color palette, typography selection, and building out a scalable component library for the agency's internal tools.",
         tags: ["Branding", "Illustrator", "Art Direction"],
         image: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        link: "#"
+        github: "#",
+        live: "#"
     }
 };
 
@@ -47,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const mMeta = document.getElementById('modal-meta');
     const mDesc = document.getElementById('modal-desc');
     const mTags = document.getElementById('modal-tags');
-    const mLink = document.getElementById('modal-link');
+    const mLinkGithub = document.getElementById('modal-link-github');
+    const mLinkLive = document.getElementById('modal-link-live');
 
     if (!modal) return; // Safeguard if modal HTML is missing
 
@@ -69,7 +74,20 @@ document.addEventListener('DOMContentLoaded', () => {
             mMeta.textContent = data.meta;
             mDesc.textContent = data.desc;
             mHeader.style.backgroundImage = `url('${data.image}')`;
-            mLink.href = data.link;
+
+            if (mLinkGithub && data.github) {
+                mLinkGithub.href = data.github;
+                mLinkGithub.style.display = 'inline-flex';
+            } else if (mLinkGithub) {
+                mLinkGithub.style.display = 'none';
+            }
+
+            if (mLinkLive && data.live) {
+                mLinkLive.href = data.live;
+                mLinkLive.style.display = 'inline-flex';
+            } else if (mLinkLive) {
+                mLinkLive.style.display = 'none';
+            }
 
             mTags.innerHTML = '';
             data.tags.forEach(tag => {
@@ -83,6 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             modal.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+    });
+
+    // Prevent clicks on card links from opening the modal
+    document.querySelectorAll('.pc-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.stopPropagation();
         });
     });
 
