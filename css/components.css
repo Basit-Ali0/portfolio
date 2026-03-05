@@ -108,7 +108,7 @@
     padding: 13px 20px;
     border-radius: 12px;
     background: var(--dark);
-    color: var(--card);
+    color: var(--bg);
     font-family: var(--font);
     font-size: 14px;
     font-weight: 700;
