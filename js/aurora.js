@@ -55,7 +55,7 @@
             // Pure white background for light mode
             ctx.fillStyle = '#ffffff';
             ctx.fillRect(0, 0, W, H);
-            ctx.globalCompositeOperation = 'multiply';
+            ctx.globalCompositeOperation = 'source-over';
         }
 
         curtains.forEach((c) => {
@@ -81,7 +81,7 @@
                 const alphaPulse = 0.85 + 0.15 * Math.sin(t * c.spd * 300 + progress * 4);
 
                 // Vastly decreased opacity for light mode to maintain contrast
-                let op = isDark ? c.op * alphaPulse : (c.op * 0.25 * alphaPulse);
+                let op = isDark ? c.op * alphaPulse : (c.op * 0.15 * alphaPulse);
 
                 if (isDark) {
                     grad.addColorStop(0, `hsla(${c.h}, 85%, 65%, 0)`);
@@ -90,11 +90,12 @@
                     grad.addColorStop(0.65, `hsla(${c.h}, 75%, 50%, ${op * 0.7})`);
                     grad.addColorStop(1, `hsla(${c.h}, 70%, 40%, 0)`);
                 } else {
-                    // Light mode pastel gradients multiplying against white
-                    grad.addColorStop(0, `hsla(${c.h}, 90%, 65%, 0)`);
-                    grad.addColorStop(0.3, `hsla(${c.h}, 90%, 65%, ${op * 1.5})`);
-                    grad.addColorStop(0.7, `hsla(${c.h}, 80%, 55%, ${op * 1.0})`);
-                    grad.addColorStop(1, `hsla(${c.h}, 70%, 45%, 0)`);
+                    // Light mode pastel gradients drawing normally over white
+                    // We use higher lightness to keep it subtle
+                    grad.addColorStop(0, `hsla(${c.h}, 90%, 80%, 0)`);
+                    grad.addColorStop(0.3, `hsla(${c.h}, 90%, 80%, ${op * 1.5})`);
+                    grad.addColorStop(0.7, `hsla(${c.h}, 80%, 75%, ${op * 1.0})`);
+                    grad.addColorStop(1, `hsla(${c.h}, 70%, 75%, 0)`);
                 }
 
                 ctx.fillStyle = grad;
