@@ -3,41 +3,41 @@
 // ══════════════════════════════════════
 
 const projectsData = {
-    tesla: {
-        title: "Tesla Landing Page",
-        meta: "UI Design & Framer Development · 2025",
-        desc: "A conceptual redesign and development of Tesla's landing page, focusing on high-performance motion design, interactive 3D vehicle models, and a darker, more premium aesthetic. Built to push the boundaries of Framer's animation capabilities while maintaining perfect responsiveness across all devices.",
-        tags: ["Framer", "UI/UX", "Motion Design", "3D Web"],
+    yggdrasil: {
+        title: "Yggdrasil",
+        meta: "Full-Stack Compliance Engine",
+        desc: "Architected a full-stack compliance engine using Next.js 15, React 19, and TypeScript that automates mapping of GDPR / SOC2 / AML style policies to CSV datasets, removing manual auditing steps. Integrated LLM assistance (Vercel AI SDK + Google Gemini) to extract enforceable logic from PDFs and feed a deterministic rule engine. Backend on Supabase (Postgres + RLS) with a Bayesian feedback loop to iteratively improve rule precision and lower false positives. Designed dashboards and CSV exports to make audit trails and remediation actionable for compliance teams.",
+        tags: ["Next.js", "React", "TypeScript", "Supabase", "LLMs", "Compliance", "Docker"],
         image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        github: "#",
-        live: "#"
+        github: "https://github.com/Basit-Ali0/Yggdrasil",
+        live: "https://yggdrasil-793978127865.asia-south1.run.app/"
     },
-    grok: {
-        title: "Grok Dashboard",
-        meta: "Product Design · 2024",
-        desc: "An exploration into conceptualizing a dedicated dashboard for xAI's Grok. The focus was on creating a brutally utilitarian yet slick interface that handles high-density data, real-time streaming text, and complex user prompt histories without feeling cluttered.",
-        tags: ["Product Design", "Figma", "Design Systems"],
+    slotsync: {
+        title: "SlotSync",
+        meta: "Backend API Architecture",
+        desc: "Built a modular, production-ready RESTful API with Node.js and Express.js focused on clean separation of concerns and scalable route handling. Implemented request validation, centralized error middleware, and controller/service layers to reduce server exceptions and make the codebase easy to extend. The architecture improves testability and speeds up onboarding for new contributors — ideal for real-time booking or scheduling frontends. Frontend integrations follow the same modular conventions.",
+        tags: ["Node.js", "Express", "REST API", "Architecture", "Validation", "CI/CD"],
         image: "https://images.unsplash.com/photo-1620825937374-87fc1a620f8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        github: "#",
-        live: "#"
+        github: "https://github.com/Basit-Ali0/slotsync-backend",
+        live: "https://yggdrasil-793978127865.asia-south1.run.app/"
     },
-    notion: {
-        title: "Notion Redesign",
-        meta: "UX Research & Motion Design · 2024",
-        desc: "A comprehensive case study on improving Notion's mobile navigation and workspace hierarchy. This project involved extensive user research, prototyping new fluid swipe gestures, and tightening up the dark mode color palette for better contrast and legibility.",
-        tags: ["UX Research", "Prototyping", "Mobile First"],
+    maskedfile: {
+        title: "Masked File (Secure Share)",
+        meta: "Zero-Knowledge Encrypted Platform",
+        desc: "A zero-knowledge encrypted file-sharing platform using AES-256-GCM via the Web Crypto API so the server never sees plaintext. Implemented a streaming encrypt/upload/download pipeline that supports files up to 5GB using Web Workers to keep the UI responsive. Deployed with Docker, Render, and Cloudflare R2 for global delivery; Supabase stores metadata and handles auto-expiry. Current deployments serve 50+ active users while maintaining a strict client-side key model and automatic file destruction. This project showcases secure UX for sensitive file exchange without compromising on scale or UX.",
+        tags: ["WebCrypto", "AES-GCM", "Web Workers", "Cloudflare R2", "Supabase", "Docker", "Secure by design"],
         image: "https://images.unsplash.com/photo-1555547602-0c9f1acb32f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        github: "#",
-        live: "#"
+        github: "https://github.com/Basit-Ali0/secure-share",
+        live: "http://maskedfile.online"
     },
-    sprrrint: {
-        title: "Sprrrint Branding",
-        meta: "Brand Identity · 2023",
-        desc: "The complete brand identity system for Sprrrint, a fast-paced development agency. This included logo design, establishing a vibrant core color palette, typography selection, and building out a scalable component library for the agency's internal tools.",
-        tags: ["Branding", "Illustrator", "Art Direction"],
+    campuspulse: {
+        title: "Campus Pulse",
+        meta: "AI-Powered Automation Portal",
+        desc: "Developed a centralized grievance management system to automate the triage, aggregation, and routing of student-reported issues across the Jamia Hamdard campus. Built with Next.js and Supabase, the platform replaces fragmented offline complaints with a unified web portal. It leverages Google Generative AI to automatically group similar overlapping issues and calculates dynamic priority scores based on urgency, impact, and reporting frequency. Designed robust, role-based dashboards for both students and administrators, featuring real-time metric visualization and automated department routing.",
+        tags: ["Next.js", "Supabase", "PostgreSQL", "Google Generative AI", "Tailwind CSS", "Zustand"],
         image: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        github: "#",
-        live: "#"
+        github: "https://github.com/Amm4r03/campus-pulse",
+        live: "https://campus-pulse-xi.vercel.app/"
     }
 };
 
@@ -58,8 +58,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function tagColor(tagName) {
         const map = {
-            'Framer': '#a855f7', 'UI/UX': '#3b82f6', 'Product Design': '#3b82f6',
-            'UX Research': '#22c55e', 'Branding': '#ec4899', 'Motion Design': '#f59e0b'
+            'Next.js': '#3b82f6', 'React': '#06b6d4', 'TypeScript': '#2563eb',
+            'Supabase': '#22c55e', 'LLMs': '#a855f7', 'Compliance': '#f59e0b',
+            'Docker': '#0ea5e9', 'Node.js': '#16a34a', 'Express': '#6b7280',
+            'REST API': '#ef4444', 'Architecture': '#8b5cf6', 'Validation': '#14b8a6',
+            'CI/CD': '#f97316', 'WebCrypto': '#f43f5e', 'AES-GCM': '#d946ef',
+            'Web Workers': '#eab308', 'Cloudflare R2': '#f97316', 'Secure by design': '#10b981',
+            'PostgreSQL': '#336791', 'Google Generative AI': '#0d9488', 'Tailwind CSS': '#06b6d4',
+            'Zustand': '#fbbf24'
         };
         return map[tagName] || '#6366f1';
     }
