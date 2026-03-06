@@ -58,6 +58,8 @@ nav.scrolled {
     font-weight: 700;
     color: var(--dark);
     letter-spacing: -0.3px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .nav-right {
