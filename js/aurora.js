@@ -84,11 +84,11 @@
                 let op = isDark ? c.op * alphaPulse : (c.op * 0.15 * alphaPulse);
 
                 if (isDark) {
-                    grad.addColorStop(0, `hsla(${c.h}, 85%, 65%, 0)`);
-                    grad.addColorStop(0.1, `hsla(${c.h}, 85%, 65%, ${op * 0.9})`);
-                    grad.addColorStop(0.35, `hsla(${c.h}, 80%, 60%, ${op})`);
-                    grad.addColorStop(0.65, `hsla(${c.h}, 75%, 50%, ${op * 0.7})`);
-                    grad.addColorStop(1, `hsla(${c.h}, 70%, 40%, 0)`);
+                    grad.addColorStop(0, `hsla(${c.h}, 85%, 45%, 0)`);
+                    grad.addColorStop(0.1, `hsla(${c.h}, 85%, 45%, ${op * 0.8})`);
+                    grad.addColorStop(0.35, `hsla(${c.h}, 80%, 40%, ${op * 0.9})`);
+                    grad.addColorStop(0.65, `hsla(${c.h}, 75%, 30%, ${op * 0.6})`);
+                    grad.addColorStop(1, `hsla(${c.h}, 70%, 20%, 0)`);
                 } else {
                     // Light mode pastel gradients drawing normally over white
                     // We use higher lightness to keep it subtle

@@ -35,16 +35,16 @@
 [data-theme="dark"] {
   --bg: #04060c;
   --card: transparent;
-  --card-bg: rgba(10, 15, 32, 0.65);
+  --card-bg: rgba(10, 15, 30, 0.75);
   --card-alt: transparent;
-  --border: rgba(100, 150, 255, 0.12);
-  --card-border: rgba(80, 140, 255, 0.15);
+  --border: rgba(100, 150, 255, 0.15);
+  --card-border: rgba(80, 140, 255, 0.2);
   --divider: rgba(100, 150, 255, 0.08);
 
   /* Typography — Lighter for dark mode contrast */
-  --dark: #e8eeff;
-  --gray: #7a8aaa;
-  --gray2: #a5b4fc;
+  --dark: #f8fafc;
+  --gray: #cbd5e1;
+  --gray2: #e2e8f0;
 
   --input-bg: rgba(10, 15, 32, 0.5);
   --pill-bg: rgba(15, 25, 45, 0.6);
