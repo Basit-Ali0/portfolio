@@ -1,7 +1,7 @@
 // ══════════════════════════════════════
 // TYPING ANIMATION (HERO)
 // ══════════════════════════════════════
-const words = ['reliable products.', 'robust systems.', 'clean code.', 'secure platforms.', 'scalable infrastructure.'];
+const words = ['scales.', 'performs.', 'evolves.', 'lasts.'];
 const typedEl = document.getElementById('typedWord');
 const cursorEl = document.getElementById('typedCursor');
 let wordIdx = 0, charIdx = 0, deleting = false;
