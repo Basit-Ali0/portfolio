@@ -18,6 +18,38 @@ body {
     overflow-x: hidden;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f1220;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b4a7a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4f5d9a;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: #0a0d18;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: #2d3754;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: #3d4770;
+}
+
 [data-theme="dark"] body {
     background: #04060c;
 }

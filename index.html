@@ -510,19 +510,19 @@
                                 class="soc-handle">basit...04@gmail.com</span></a>
                     </div>
                 </div>
-                <div class="cf">
+                <form class="cf" id="contact-form" action="https://formspree.io/f/mreylbve" method="POST">
                     <div>
-                        <div class="flbl">Name</div><input class="finput" type="text" placeholder="Your name" />
+                        <div class="flbl">Name</div><input class="finput" type="text" name="name" placeholder="Your name" required />
                     </div>
                     <div>
-                        <div class="flbl">Email</div><input class="finput" type="email" placeholder="you@email.com" />
+                        <div class="flbl">Email</div><input class="finput" type="email" name="email" placeholder="you@email.com" required />
                     </div>
                     <div>
-                        <div class="flbl">Message</div><textarea class="ftarea"
-                            placeholder="What's on your mind?"></textarea>
+                        <div class="flbl">Message</div><textarea class="ftarea" name="message"
+                            placeholder="What's on your mind?" required></textarea>
                     </div>
-                    <button class="fsubmit" id="fsub">Send Message →</button>
-                </div>
+                    <button class="fsubmit" type="submit" id="fsub">Send Message →</button>
+                </form>
             </div>
         </section>
 

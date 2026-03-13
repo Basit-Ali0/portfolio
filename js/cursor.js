@@ -22,8 +22,10 @@ document.addEventListener('mousemove', e => {
 });
 
 document.addEventListener('mouseleave', () => {
-    dot.style.opacity = '0';
-    ring.style.opacity = '0';
+    if (!document.getElementById('project-modal')?.classList.contains('active')) {
+        dot.style.opacity = '0';
+        ring.style.opacity = '0';
+    }
 });
 document.addEventListener('mouseenter', () => {
     if (cursorVisible) {
@@ -34,7 +36,7 @@ document.addEventListener('mouseenter', () => {
 
 // Hover states — link/button expand
 document.addEventListener('mouseover', e => {
-    if (e.target.closest('a, button, .pc, .spill, .ach-card, .soc')) {
+    if (e.target.closest('a, button, .pc, .spill, .ach-card, .soc, .modal-content, .modal-close, .modal-link')) {
         dot.style.transform = 'translate(-50%,-50%) scale(1.8)';
         dot.style.background = '#6366f1';
         ring.style.width = '54px';
@@ -44,7 +46,7 @@ document.addEventListener('mouseover', e => {
     }
 });
 document.addEventListener('mouseout', e => {
-    if (e.target.closest('a, button, .pc, .spill, .ach-card, .soc')) {
+    if (e.target.closest('a, button, .pc, .spill, .ach-card, .soc, .modal-content, .modal-close, .modal-link')) {
         dot.style.transform = 'translate(-50%,-50%) scale(1)';
         dot.style.background = '';
         ring.style.width = '36px';

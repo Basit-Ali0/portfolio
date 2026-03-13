@@ -9,7 +9,7 @@
 #cursor-dot {
     position: fixed;
     pointer-events: none;
-    z-index: 99999;
+    z-index: 9999999;
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -21,7 +21,7 @@
 #cursor-ring {
     position: fixed;
     pointer-events: none;
-    z-index: 99998;
+    z-index: 9999998;
     width: 36px;
     height: 36px;
     border-radius: 50%;
