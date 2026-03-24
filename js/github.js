@@ -80,53 +80,11 @@ async function fetchGitHub() {
         const lbls = document.querySelectorAll('.gh-lbl');
         if (lbls[1]) lbls[1].textContent = 'Followers';
         if (lbls[3]) lbls[3].textContent = 'Forks';
-
-        // 5. Aggregate top languages across all repos
-        const langMap = {};
-        const langFetches = allRepos
-            .filter(r => !r.fork)
-            .slice(0, 30)
-            .map(r => fetch(r.languages_url)
-                .then(res => res.json())
-                .then(data => {
-                    Object.entries(data).forEach(([lang, bytes]) => {
-                        langMap[lang] = (langMap[lang] || 0) + bytes;
-                    });
-                })
-                .catch(() => { })
-            );
-        await Promise.all(langFetches);
-
-        // Sort and take top 5
-        const sorted = Object.entries(langMap)
-            .sort((a, b) => b[1] - a[1])
-            .slice(0, 5);
-        const totalBytes = sorted.reduce((s, [, b]) => s + b, 0);
-
-        // Render language bars
-        const lb = document.getElementById('lbars');
-        lb.innerHTML = '<div class="sglabel" style="margin-bottom:12px">Top Languages</div>';
-        sorted.forEach(([name, bytes]) => {
-            const pct = Math.round(bytes / totalBytes * 100);
-            lb.innerHTML += `<div class="lb-row">
-        <span class="lb-name">${name}</span>
-        <div class="lb-track"><div class="lb-fill" style="width:0%;background:${langColor(name)}" data-p="${pct}"></div></div>
-        <span class="lb-pct">${pct}%</span>
-      </div>`;
-        });
-
-        // Animate bars if section already visible
-        setTimeout(() => {
-            document.querySelectorAll('.lb-fill').forEach(el => { el.style.width = el.dataset.p + '%'; });
-        }, 400);
-
     } catch (err) {
         console.warn('GitHub API error, using fallback:', err);
         document.querySelectorAll('.gh-num').forEach((el, i) => {
             el.textContent = ['—', '—', '—', '—'][i];
         });
-        const lb = document.getElementById('lbars');
-        lb.innerHTML = '<div class="sglabel" style="margin-bottom:12px;color:#e44">Could not load — check network</div>';
     }
 }
 
