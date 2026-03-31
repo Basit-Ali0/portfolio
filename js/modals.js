@@ -26,7 +26,7 @@ const projectsData = {
         meta: "Zero-Knowledge Encrypted Platform",
         desc: "A zero-knowledge encrypted file-sharing platform using AES-256-GCM via the Web Crypto API so the server never sees plaintext. Implemented a streaming encrypt/upload/download pipeline that supports files up to 5GB using Web Workers to keep the UI responsive. Deployed with Docker, Render, and Cloudflare R2 for global delivery; Supabase stores metadata and handles auto-expiry. Current deployments serve 50+ active users while maintaining a strict client-side key model and automatic file destruction. This project showcases secure UX for sensitive file exchange without compromising on scale or UX.",
         tags: ["WebCrypto", "AES-GCM", "Web Workers", "Cloudflare R2", "Supabase", "Docker", "Secure by design"],
-        image: "https://images.unsplash.com/photo-1555547602-0c9f1acb32f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "images/maskedfile.png",
         github: "https://github.com/Basit-Ali0/secure-share",
         live: "http://maskedfile.online"
     },
