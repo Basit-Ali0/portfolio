@@ -677,7 +677,10 @@
 }
 
 .pi3 {
-    background: linear-gradient(160deg, #1a1a2e, #16213e 50%, #0f3460);
+    background: linear-gradient(160deg, #1a1a2e, #16213e 50%, #0f3460), url('../images/maskedfile.png');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
 }
 
 .pi4 {
