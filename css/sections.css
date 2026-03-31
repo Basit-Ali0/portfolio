@@ -700,3 +700,52 @@
     color: var(--gray);
     line-height: 1.55;
 }
+
+/* ── SCROLL TO TOP BUTTON ── */
+#scroll-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+#scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#scroll-top:hover {
+    background: var(--dark);
+    border-color: var(--dark);
+}
+
+#scroll-top:hover svg {
+    stroke: var(--bg);
+}
+
+#scroll-top svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--dark);
+    transition: stroke 0.2s;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}

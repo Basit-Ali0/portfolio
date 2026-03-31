@@ -106,7 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            document.body.style.overflow = 'hidden';
+            openModal(card);
         });
     });
 
@@ -117,10 +118,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    let lastFocusedElement = null;
+
+    function openModal(trigger) {
+        lastFocusedElement = trigger;
+        modal?.setAttribute('aria-modal', 'true');
+        modal?.setAttribute('role', 'dialog');
+        modalClose?.focus();
+    }
+
     function closeModal() {
         if (!modal) return;
         modal.classList.remove('active');
         document.body.style.overflow = '';
+        lastFocusedElement?.focus();
     }
 
     if (modalClose) {

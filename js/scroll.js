@@ -3,13 +3,22 @@
 // ══════════════════════════════════════
 const bar = document.getElementById('progress-bar');
 const nav = document.getElementById('mainNav');
+const scrollTopBtn = document.getElementById('scroll-top');
+
 window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     const total = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.width = (scrolled / total * 100) + '%';
     if (scrolled > 60) nav.classList.add('scrolled');
     else nav.classList.remove('scrolled');
+    
+    if (scrolled > 400) scrollTopBtn?.classList.add('visible');
+    else scrollTopBtn?.classList.remove('visible');
 }, { passive: true });
+
+scrollTopBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 // ══════════════════════════════════════
 // SCROLL REVEAL (IntersectionObserver)
